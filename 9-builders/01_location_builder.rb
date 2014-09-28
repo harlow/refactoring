@@ -17,11 +17,7 @@ class LocationBuilder
     location.latitude, location.longitude = geocode_address
   end
 
-  def geocoder
-    GeocodingService.geocoder
-  end
-
   def geocode_address
-    geocoder.coordinates(location.full_address)
+    GeocodingService.geocoder.coordinates(location.full_address)
   end
 end
